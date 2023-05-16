@@ -1,7 +1,7 @@
 <template>
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container-fluid">
-      <router-link class="navbar-brand" :to="{name: 'home'}">
+      <router-link class="navbar-brand" :to="{name: 'globalFeed'}">
         MediumClone
       </router-link>
 
@@ -20,7 +20,7 @@
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto">
           <li class="nav-item">
-            <router-link class="nav-link" :to="{name: 'home'}" exact active-class="active">Home</router-link>
+            <router-link class="nav-link" :to="{name: 'globalFeed'}" exact active-class="active">Home</router-link>
           </li>
 
           <template v-if="isLoggedIn">

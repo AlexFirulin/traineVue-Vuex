@@ -66,7 +66,7 @@ export default {
     return {
       email: '',
       password: '',
-      username: ''
+      username: ""
     }
   },
   computed:{
@@ -84,7 +84,7 @@ export default {
     password:this.password
    }).then(user =>{
       console.log('succes register',user)
-      this.$router.push({name:"home"})
+      this.$router.push({name:"globalFeed"})
     } )
   }
 }
