@@ -98,7 +98,7 @@ const actions = {
       authApi
         .register(credentials)
         .then(response => {
-          context.commit(mutationTypes.registerSuccess, response.data.users)
+          context.commit(mutationTypes.registerSuccess, response.data.user)
           setItem('accessToken',response.data.user.token)
           resolve(response.data.user)
         })
