@@ -103,7 +103,9 @@ const actions = {
           resolve(response.data.user)
         })
         .catch(result => {
-          context.commit(mutationTypes.registerFailure, result.response.data.errors)
+          context.commit(
+            mutationTypes.registerFailure,
+            result.response.data.errors)
         })
     })
   },
@@ -112,9 +114,9 @@ const actions = {
     return new Promise(resolve => {
       context.commit(mutationTypes.loginStart)
       authApi
-        .register(credentials)
+        .login(credentials)
         .then(response => {
-          context.commit(mutationTypes.loginSuccess, response.data.users)
+          context.commit(mutationTypes.loginSuccess, response.data.user)
           setItem('accessToken',response.data.user.token)
           resolve(response.data.user)
         })
@@ -127,9 +129,9 @@ const actions = {
     return new Promise(resolve => {
       context.commit(mutationTypes.getCurrentUsernStart)
       authApi
-        .register()
+        .getCurrentUser()
         .then(response => {
-          context.commit(mutationTypes.getCurrentUserSuccess, response.data.users)
+          context.commit(mutationTypes.getCurrentUserSuccess, response.data.user)
           setItem('accessToken',response.data.user.token)
           resolve(response.data.user)
         })
